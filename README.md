@@ -13,7 +13,7 @@ and stores them in PostgreSQL.
 ## Setup
 ```bash
 git clone <repo_url>
-cd phone-specs-django
+cd phoneSpecsProject
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
