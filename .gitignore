@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Django
+*.sqlite3
+.env
+
+# Playwright
+.playwright/
+res_data.json
+playwright.lock
+
+# IDE
+.idea/
+.vscode/

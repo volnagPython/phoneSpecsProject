@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phones tech site</title>
+</head>
+<body>
+<br>
+<h1>**********  Specifications of the phone  ***********</h1>
+<h2>
+{% for i in data %}
+    {{i.name}} -- {{i.property}} ;<br>
+{% endfor %}
+</h2>
+</body>
+</html>
