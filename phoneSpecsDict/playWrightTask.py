@@ -283,6 +283,5 @@ def main():
 
         return phone_characteristics
 
-
 if __name__ == "__main__":
     main()

@@ -19,8 +19,11 @@ from django.urls import path
 from phoneSpecsDict.views import index_page
 from phoneSpecsDict.views import spec_page
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page),
-    path('specifications', spec_page),
+    path('specifications/', spec_page),
+    # path('specs', test_page),
 ]

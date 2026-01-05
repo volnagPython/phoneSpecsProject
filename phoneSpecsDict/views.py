@@ -13,27 +13,29 @@ def index_page(request):
     ''' Виводить інформацію на терміналі про характеристики телефону'''
 
     all_specs = MainSpec.objects.all()
-    print("--- Специфікація телефону включає --- : ",all_specs)
+    # print("--- Специфікація телефону включає --- : ",all_specs)
     return render(request, 'index.html',{"data":all_specs})
 
 def spec_page(request):
-    '''Start Playwright in background'''
+    '''Starts Playwright in the background'''
+
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, "res_data.json")
-    file_path_pl = os.path.join(current_dir, "playWrightTask.py")
+    file_path = os.path.join(current_dir, "res_data.json")  # json file with phone's characteristics
+    file_path_pl = os.path.join(current_dir, "playWrightTask.py") # it's fetching the web-site
 
     if os.path.exists(file_path):
 
         with open(file_path, "r", encoding="utf-8") as f:
             dict_phones = json.load(f)
-        print(dict_phones)
+        # print(dict_phones)
         for key,value in dict_phones.items():
             obj, created = MainSpec.objects.get_or_create(name=key, property=value)
             # print(f'{obj}, {created}')
     else:
         subprocess.Popen([sys.executable, file_path_pl])
-        return JsonResponse({"status": "Playwright job started. Please wait for about 1 min."
-                                       " Then, reload the page."})
+        return JsonResponse({"status": "Playwright job has started. Please wait for about 1 min."
+                                       "Then, reload the page."})
 
     return render(request, 'specifications.html')
+# Jan. 5,2025
