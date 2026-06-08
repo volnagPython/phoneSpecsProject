@@ -1,8 +1,9 @@
 # Phone Specifications Django Project
 
 ## Description
-Django project that runs a Playwright script to collect phone specifications
-and stores them in PostgreSQL.
+Django project that runs a Playwright script to collect the phone's specifications
+from the website and stores them in the PostgreSQL database. It takes about 5 min to collect the data.
+All specs are also shown on index page.
 
 ## Tech stack
 - Python

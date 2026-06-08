@@ -34,7 +34,7 @@ def spec_page(request):
             # print(f'{obj}, {created}')
     else:
         subprocess.Popen([sys.executable, file_path_pl])
-        return JsonResponse({"status": "Playwright job has started. Please wait for about 1 min."
+        return JsonResponse({"status": "Playwright job has been started. Please wait for about 5 min."
                                        "Then, reload the page."})
 
     return render(request, 'specifications.html')
